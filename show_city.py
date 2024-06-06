@@ -1,11 +1,15 @@
 def show_city(info):
-    city = info["city"]
-    print("City:", city)
+    try:
+        city = info['city']
+    except KeyError:
+        print('City: Unknown')
+        return
+    print('City:', city)
 
 info = {
-    "name": "Jessica Lee",
-    "country": "Canada"
+    'name': 'Jessica Lee',
+    'country': 'Canada'
 }
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     show_city(info)
