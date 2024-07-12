@@ -1,10 +1,13 @@
 def fetch_date(event_details):
-    date = event_details["date"]
-    print("Event date:", date)
+    try:
+        date = event_details['date']
+    except KeyError:
+        date = None
+    print('Event date:', date)
 
-event_details = {
-    "event_name": "Annual Conference",
-    "location": "New York City"
-}
-if __name__ == "__main__":
+if __name__ == '__main__':
+    event_details = {
+        'event_name': 'Annual Conference',
+        'location': 'New York City'
+    }
     fetch_date(event_details)
